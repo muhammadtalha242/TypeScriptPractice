@@ -9,10 +9,10 @@ interface HouseWithID extends House {
   id: number;
 }
 
-function findHouses(
-  houses: House[] | string,
-  filter?: (house: House) => boolean
-): HouseWithID[] {
+type housesInput = House[] | string;
+type housesFilter = (house: House) => boolean;
+
+function findHouses(houses: housesInput, filter?: housesFilter): HouseWithID[] {
   let housesArr: House[] =
     typeof houses === "string" ? JSON.parse(houses) : houses;
   let housesWithIDArr: HouseWithID[] = housesArr.map(
