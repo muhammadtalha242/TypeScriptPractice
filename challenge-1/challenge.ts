@@ -25,18 +25,6 @@ function findHouses(houses: housesInput, filter?: housesFilter): HouseWithID[] {
   return housesWithIDArr;
 }
 
-// function findHouses(
-//   houses: string,
-//   filter: (house: House) => boolean
-// ): HouseWithID[]{
-//     return [];
-// }
-// function findHouses(houses: House[]): HouseWithID[];
-// function findHouses(
-//   houses: House[],
-//   filter: (house: House) => boolean
-// ): HouseWithID[];
-
 console.log(
   findHouses(JSON.stringify(houses), ({ name }) => name === "Atreides")
 );
