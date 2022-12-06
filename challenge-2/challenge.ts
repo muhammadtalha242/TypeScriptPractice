@@ -28,14 +28,14 @@ console.log(
 );
 
 // Map
-type callbackMap<T> = (v: T) => T;
+type callbackMap<T, K> = (v: T) => K;
 
-function customMap<T>(array: T[], callbackFunc: callbackMap<T>): T[] {
-  return array.reduce((prev: T[], current: T, index: number) => {
+function customMap<T, K>(array: T[], callbackFunc: callbackMap<T, K>): K[] {
+  return array.reduce((prev, current) => {
     return [...prev, callbackFunc(current)];
-  }, []);
+  }, [] as K[]);
 }
 console.log(
   "customMap: ",
-  customMap(array, (v) => v * 2)
+  customMap(array, (v) => (v * 2).toString())
 );
