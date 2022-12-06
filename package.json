@@ -1,7 +1,9 @@
 {
-  "name": "practice",
+  "name": "TypeScriptPractice",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/muhammadtalha242/TypeScriptPractice.git",
+  "author": "muhammadtalha242 <m.talha2244@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "ts-node": "^10.9.1",

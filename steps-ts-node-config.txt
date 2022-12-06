@@ -1,0 +1,4 @@
+yarn init => initilize package manager. 
+yarn add typescript ts-node -D => add typescript and ts-node (a wrapper around node to execute ts files) in dev mode
+npx tsc --init => create tsconfig.json. tsc (typescript Compiler) 
+npx ts-node <fileName> => command to execute given file.
