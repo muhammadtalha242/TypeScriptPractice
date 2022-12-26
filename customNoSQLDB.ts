@@ -1,16 +1,12 @@
-interface DataBase<T> {
-    id: string;
-    value: T;
-    get: (id: string)=> T;
-    set:(value: T)=> void; 
+interface DataBase {
+  get: (id: string) => string;
+  set: (value: string) => void;
 }
 
-class ConventionNoSQLDB<T> implements DataBase<T>{
-    
+class ConventionNoSQLDB implements DataBase {
+  get(id: string): string {
+    return "";
+  }
 
-
-    get<T>: (id: string) =>{
-        return {} 
-    }
-    set: (value: T) => {}
+  set(value: string) {}
 }
