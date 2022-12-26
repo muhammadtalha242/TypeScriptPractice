@@ -1,19 +1,20 @@
-interface DataBase {
-  get: (key: string) => string;
-  set: (key: string, value: string) => void;
+interface DataBase<T, U> {
+  get: (key: U) => T;
+  set: (key: U, value: T) => void;
 }
 
-class ConventionNoSQLDB implements DataBase {
-  protected db: Record<string, string> = {};
-  get(key: string): string {
+type DBKeyTypes = string | number | symbol;
+class ConventionNoSQLDB<T, U extends DBKeyTypes> implements DataBase<T, U> {
+  protected db: Record<U, T> = {} as Record<U, T>;
+  get(key: U): T {
     return this.db[key];
   }
 
-  set(key: string, value: string) {
+  set(key: U, value: T) {
     this.db[key] = value;
   }
 }
 
 const db = new ConventionNoSQLDB();
-db.set('key', '123');
-console.log(db.get('key'));
+db.set("key", "123");
+console.log(db.get("key"));
