@@ -12,6 +12,7 @@ class ConventionNoSQLDB<T, U extends DBKeyTypes> implements DataBase<T, U> {
 
   set(key: U, value: T) {
     this.db[key] = value;
+    
   }
 }
 
